@@ -1,15 +1,15 @@
 package br.com.fiap.veiculo.pagamento.domain.service;
 
-import br.com.fiap.revenda.veiculos.domain.model.Contato;
-import br.com.fiap.revenda.veiculos.domain.model.Endereco;
-import br.com.fiap.revenda.veiculos.infrastructure.repository.ClienteRepository;
-import br.com.fiap.revenda.veiculos.presentation.Exception.ClienteException;
-import br.com.fiap.revenda.veiculos.presentation.assembler.ClienteAssembler;
-import br.com.fiap.revenda.veiculos.presentation.assembler.ContatoAssembler;
-import br.com.fiap.revenda.veiculos.presentation.assembler.EnderecoAssembler;
-import br.com.fiap.revenda.veiculos.presentation.dto.ClienteDto;
-import br.com.fiap.revenda.veiculos.presentation.dto.ContatoDto;
-import br.com.fiap.revenda.veiculos.presentation.dto.EnderecoDto;
+import br.com.fiap.veiculo.pagamento.domain.model.Contato;
+import br.com.fiap.veiculo.pagamento.domain.model.Endereco;
+import br.com.fiap.veiculo.pagamento.infraestructure.repository.ClienteRepository;
+import br.com.fiap.veiculo.pagamento.presentation.assembler.ClienteAssembler;
+import br.com.fiap.veiculo.pagamento.presentation.assembler.ContatoAssembler;
+import br.com.fiap.veiculo.pagamento.presentation.assembler.EnderecoAssembler;
+import br.com.fiap.veiculo.pagamento.presentation.dto.ClienteDto;
+import br.com.fiap.veiculo.pagamento.presentation.dto.ContatoDto;
+import br.com.fiap.veiculo.pagamento.presentation.dto.EnderecoDto;
+import br.com.fiap.veiculo.pagamento.presentation.exception.ClienteException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

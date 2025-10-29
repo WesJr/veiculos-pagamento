@@ -1,9 +1,9 @@
 package br.com.fiap.veiculo.pagamento.domain.service;
 
-import br.com.fiap.revenda.veiculos.domain.model.Endereco;
-import br.com.fiap.revenda.veiculos.infrastructure.repository.EnderecoRepository;
-import br.com.fiap.revenda.veiculos.presentation.assembler.EnderecoAssembler;
-import br.com.fiap.revenda.veiculos.presentation.dto.EnderecoDto;
+import br.com.fiap.veiculo.pagamento.domain.model.Endereco;
+import br.com.fiap.veiculo.pagamento.infraestructure.repository.EnderecoRepository;
+import br.com.fiap.veiculo.pagamento.presentation.assembler.EnderecoAssembler;
+import br.com.fiap.veiculo.pagamento.presentation.dto.EnderecoDto;
 import org.springframework.stereotype.Service;
 
 @Service

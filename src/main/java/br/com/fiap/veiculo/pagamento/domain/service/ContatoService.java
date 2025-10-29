@@ -1,9 +1,9 @@
 package br.com.fiap.veiculo.pagamento.domain.service;
 
-import br.com.fiap.revenda.veiculos.domain.model.Contato;
-import br.com.fiap.revenda.veiculos.infrastructure.repository.ContatoRepository;
-import br.com.fiap.revenda.veiculos.presentation.assembler.ContatoAssembler;
-import br.com.fiap.revenda.veiculos.presentation.dto.ContatoDto;
+import br.com.fiap.veiculo.pagamento.domain.model.Contato;
+import br.com.fiap.veiculo.pagamento.infraestructure.repository.ContatoRepository;
+import br.com.fiap.veiculo.pagamento.presentation.assembler.ContatoAssembler;
+import br.com.fiap.veiculo.pagamento.presentation.dto.ContatoDto;
 import org.springframework.stereotype.Service;
 
 @Service

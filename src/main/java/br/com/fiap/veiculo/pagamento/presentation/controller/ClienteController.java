@@ -1,8 +1,8 @@
 package br.com.fiap.veiculo.pagamento.presentation.controller;
 
-import br.com.fiap.revenda.veiculos.domain.service.ClienteService;
-import br.com.fiap.revenda.veiculos.presentation.Exception.ClienteException;
-import br.com.fiap.revenda.veiculos.presentation.dto.ClienteDto;
+import br.com.fiap.veiculo.pagamento.domain.service.ClienteService;
+import br.com.fiap.veiculo.pagamento.presentation.dto.ClienteDto;
+import br.com.fiap.veiculo.pagamento.presentation.exception.ClienteException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
