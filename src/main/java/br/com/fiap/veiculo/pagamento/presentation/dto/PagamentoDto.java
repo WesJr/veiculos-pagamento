@@ -4,7 +4,7 @@ import br.com.fiap.veiculo.pagamento.presentation.enumerado.Status;
 
 import java.math.BigDecimal;
 
-public record PagamentoDTO(
+public record PagamentoDto(
         Long id,
         String dataVenda,
         BigDecimal valorRemanescente,

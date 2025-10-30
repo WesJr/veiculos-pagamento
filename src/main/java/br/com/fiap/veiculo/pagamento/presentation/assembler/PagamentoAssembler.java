@@ -1,6 +1,6 @@
 package br.com.fiap.veiculo.pagamento.presentation.assembler;
 
-import br.com.fiap.veiculo.pagamento.presentation.dto.PagamentoDTO;
+import br.com.fiap.veiculo.pagamento.presentation.dto.PagamentoDto;
 import br.com.fiap.veiculo.pagamento.domain.model.Pagamento;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Component
 public class PagamentoAssembler {
 
-    public Pagamento dtoParaModelo(PagamentoDTO pagamentoDto) {
+    public Pagamento dtoParaModelo(PagamentoDto pagamentoDto) {
 
         Pagamento pagamento = new Pagamento();
 

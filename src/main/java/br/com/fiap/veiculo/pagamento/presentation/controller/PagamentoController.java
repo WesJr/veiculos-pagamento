@@ -1,7 +1,7 @@
 package br.com.fiap.veiculo.pagamento.presentation.controller;
 
 import br.com.fiap.veiculo.pagamento.domain.service.PagamentoService;
-import br.com.fiap.veiculo.pagamento.presentation.dto.PagamentoDTO;
+import br.com.fiap.veiculo.pagamento.presentation.dto.PagamentoDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,7 +15,7 @@ public class PagamentoController {
     }
 
     @PostMapping("/realizar")
-    public void incluirPagamento(@RequestBody PagamentoDTO pagamentoDto) {
+    public void incluirPagamento(@RequestBody PagamentoDto pagamentoDto) {
 
         pagamentoService.incluirPagamento(pagamentoDto);
     }
