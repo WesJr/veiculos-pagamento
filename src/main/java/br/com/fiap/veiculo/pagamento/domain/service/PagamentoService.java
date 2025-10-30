@@ -17,12 +17,14 @@ public class PagamentoService {
     private final PagamentoRepository repository;
     private final PagamentoAssembler assembler;
     private final ReservaService reservaService;
+    private final VeiculoService veiculoService;
 
-    public PagamentoService(PagamentoRepository repository, PagamentoAssembler assembler, ReservaService reservaService) {
+    public PagamentoService(PagamentoRepository repository, PagamentoAssembler assembler, ReservaService reservaService, VeiculoService veiculoService) {
 
         this.repository = repository;
         this.assembler = assembler;
         this.reservaService = reservaService;
+        this.veiculoService = veiculoService;
     }
 
     public void incluirPagamento(PagamentoDto pagamentoDto) {
@@ -51,5 +53,9 @@ public class PagamentoService {
         }
 
 
+    }
+
+    public void atualizaVeiculoParaVendido() {
+        veiculoService.atualizaVeiculoParaVendido();
     }
 }
