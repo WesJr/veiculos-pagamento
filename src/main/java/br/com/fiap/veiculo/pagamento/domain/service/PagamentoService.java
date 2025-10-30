@@ -3,7 +3,7 @@ package br.com.fiap.veiculo.pagamento.domain.service;
 import br.com.fiap.veiculo.pagamento.domain.model.Pagamento;
 import br.com.fiap.veiculo.pagamento.infraestructure.repository.PagamentoRepository;
 import br.com.fiap.veiculo.pagamento.presentation.assembler.PagamentoAssembler;
-import br.com.fiap.veiculo.pagamento.presentation.dto.PagamentoDTO;
+import br.com.fiap.veiculo.pagamento.presentation.dto.PagamentoDto;
 import br.com.fiap.veiculo.pagamento.presentation.dto.ReservaDto;
 import br.com.fiap.veiculo.pagamento.presentation.enumerado.Status;
 import br.com.fiap.veiculo.pagamento.presentation.exception.PagamentoException;
@@ -25,7 +25,7 @@ public class PagamentoService {
         this.reservaService = reservaService;
     }
 
-    public void incluirPagamento(PagamentoDTO pagamentoDto) {
+    public void incluirPagamento(PagamentoDto pagamentoDto) {
 
         Pagamento pagamento = assembler.dtoParaModelo(pagamentoDto);
         ReservaDto reserva = reservaService.buscarReservaPorCodigo(pagamentoDto.codigoPagamento());
