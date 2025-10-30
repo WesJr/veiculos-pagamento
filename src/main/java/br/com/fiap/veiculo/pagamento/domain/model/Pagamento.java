@@ -30,4 +30,10 @@ public class Pagamento {
 
     @Column(name = "codigo_pagamento")
     private String codigoPagamento;
+
+    @Column(name = "veiculo_id")
+    private Long veiculoId;
+
+    @Column(name = "atualizado")
+    private boolean atualizado;
 }
