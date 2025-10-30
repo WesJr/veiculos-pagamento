@@ -18,9 +18,12 @@ public class VeiculoService {
     }
 
     public void atualizaVeiculoParaVendido() {
-        repository.findByStatus(Status.APROVADO).forEach(pagamento -> {
+        repository.findByStatusAndAtualizado(Status.APROVADO, false).forEach(pagamento -> {
+            pagamento.setAtualizado(true);
             proxy.atualizarVeiculo(pagamento.getVeiculoId());
-            System.out.print("Veiculo id: " + pagamento.getVeiculoId() + " atuzalizado!");
+            repository.save(pagamento);
+
+            System.out.println("Veiculo id: " + pagamento.getVeiculoId() + " atualizado!");
         });
     }
 }

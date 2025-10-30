@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface PagamentoRepository extends CrudRepository<Pagamento, Long> {
 
-    List<Pagamento> findByStatus(Status status);
+    List<Pagamento> findByStatusAndAtualizado(Status status, boolean atualizado);
     
 }
