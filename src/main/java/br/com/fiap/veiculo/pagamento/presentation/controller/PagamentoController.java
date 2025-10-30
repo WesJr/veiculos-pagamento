@@ -14,10 +14,10 @@ public class PagamentoController {
         this.pagamentoService = pagamentoService;
     }
 
-    @PostMapping("/incluir")
+    @PostMapping("/realizar")
     public void incluirPagamento(@RequestBody PagamentoDTO pagamentoDto) {
 
-//        pagamentoService.incluirPagamento(pagamentoDto);
+        pagamentoService.incluirPagamento(pagamentoDto);
     }
 
     @GetMapping("/sucesso")
