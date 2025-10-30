@@ -29,6 +29,7 @@ public class PagamentoService {
 
         Pagamento pagamento = assembler.dtoParaModelo(pagamentoDto);
         ReservaDto reserva = reservaService.buscarReservaPorCodigo(pagamentoDto.codigoPagamento());
+        pagamento.setVeiculoId(reserva.veiculoDto().id());
 
         try {
             if(Objects.nonNull(reserva)) {
