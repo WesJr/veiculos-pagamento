@@ -38,11 +38,6 @@ public class PagamentoService {
                 pagamento.setStatus(Status.APROVADO);
                 repository.save(pagamento);
 
-//                Veiculo veiculo = veiculoAssembler.dtoParaModelo(veiculoService.consultarPorId(reserva.veiculoDto().id()));
-//                veiculo.setVendido(true);
-//
-//                veiculoService.inserirVeiculo(veiculoAssembler.modeloParaDto(veiculo));
-
             } else {
                 pagamento.setStatus(Status.RECUSADO);
                 repository.save(pagamento);

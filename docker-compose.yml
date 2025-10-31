@@ -1,0 +1,63 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      # Apenas cria um banco inicial (os outros serão criados via script)
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-multiple-databases.sh:/docker-entrypoint-initdb.d/init-multiple-databases.sh
+    networks:
+      - spring-net
+
+  
+  revenda-veiculos:
+    build:
+      context: ../veiculos
+      dockerfile: Dockerfile
+    container_name: revenda_veiculos_app
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/veiculos
+      SPRING_DATASOURCE_USERNAME: veiculos
+      SPRING_DATASOURCE_PASSWORD: veiculos
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SERVER_PORT: 8080
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-net
+
+  pagamentos-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pagamentos_service_app
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/pagamento
+      SPRING_DATASOURCE_USERNAME: pagamento
+      SPRING_DATASOURCE_PASSWORD: pagamento
+      SPRING_JPA_HIBERNATE_DDL_AUTO: pagamento
+      SERVER_PORT: 8081
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8081"
+    networks:
+      - spring-net
+
+volumes:
+  postgres_data:
+
+networks:
+  spring-net:
+    driver: bridge
